@@ -9,36 +9,32 @@
         color: black;
       }
     </style>
-      <script>
-        function nightDayHandler(self) {
-          var target = document.querySelector('body');
-          var alist = document.querySelectorAll('a');
-          var i = 0;
+    <script>
+      function nightDayHandler2 (parameter) {
+        var body = document.querySelector('body');
+        var alist = document.querySelectorAll('a');
+        var i = 0;
 
-            if(self.value==='night') {
-              target.style.backgroundColor = 'black';
-              target.style.color = 'white';
-              self.value = 'day';
-              while (i < alist.length) {
-                alist[i].style.color = 'white';
-                i = i + 1;
-              }
-            } else {
-              target.style.backgroundColor = 'white';
-              target.style.color ='black';
-              self.value = 'night';
-              while (i < alist.length) {
-                alist[i].style.color = 'Black';
-                i = i + 1;
-              }
-            }
+        if (parameter.value==='night') {
+          var array = ['black', 'pink', 'day', 'pink'];
+        } else {
+          var array = ['white', 'black', 'night', 'black'];
         }
-      </script>
+        
+        body.style.backgroundColor = array[0];
+        body.style.color = array[1];
+        parameter.value = array[2];
+        while (i<4) {
+          alist[i].style.color = array[3];
+          i = i + 1;
+        }
+      }
+    </script>
   </head>
   <body>
     <h1><a href="index.html">WEB</a></h1>
     <input type="button" value="night" onclick="
-      nightDayHandler(this);
+      nightDayHandler2(this);
     ">
     <ol>
       <li><a href="1_HTML.html">HTML</a></li>
